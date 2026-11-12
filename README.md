@@ -35,7 +35,7 @@ js/auth.js                create account, sign in, sign out
 js/app.js                 header + the code for each page
 ```
 
-## Checklist map (use it for Appendix B.1)
+## Checklist map
 | ID | Requirement | Where |
 |----|-------------|-------|
 | FR-01 | Landing page, header with logo, links and theme button, hero, feature cards | `index.html`, `css/layout.css` |
