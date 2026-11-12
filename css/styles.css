@@ -39,7 +39,7 @@
   --cat-software: #2f7d6d;
   --cat-lifestyle: #a04b68;
 
-  --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 [data-theme="dark"] {
@@ -79,6 +79,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  font-variant-numeric: tabular-nums;
 }
 h1, h2, h3 { margin: 0 0 12px; font-weight: 500; line-height: 1.1; letter-spacing: -0.03em; }
 h1 { font-size: 2.1rem; }
@@ -106,7 +107,7 @@ select:focus-visible, summary:focus-visible { outline: 2px solid var(--text); ou
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
-  min-height: 40px; padding: 0 24px;
+  min-height: 46px; padding: 0 28px;
   border: 2px solid var(--blue); border-radius: 4px;
   background: var(--blue); color: #fff;
   font: inherit; font-size: 14px; font-weight: 500;
@@ -125,7 +126,9 @@ select:focus-visible, summary:focus-visible { outline: 2px solid var(--text); ou
 
 /* ---------- Plain blocks (no boxes, just a thin line on top) ---------- */
 .card { padding: 20px 0; border-top: 1px solid var(--border); }
-.card-title { margin: 0 0 14px; font-size: 1rem; font-weight: 500; letter-spacing: 0; }
+.card-title { margin: 0 0 14px; font-size: 1.05rem; font-weight: 600; letter-spacing: 0; }
+.dash-main .metric-grid, .dash-side .card { border-radius: 6px; }
+.dash-side .card { padding: 20px; border: 1px solid var(--border); background: var(--bg-alt); }
 
 .form-msg { display: none; margin-bottom: 16px; padding: 12px 14px; border-radius: 4px; font-size: 0.92rem; }
 .form-msg.show { display: block; }

@@ -6,6 +6,9 @@
 <title>Ledger - Micro-Expense Visualizer</title>
 <meta name="description" content="Browse, search, filter, edit and delete your recurring expenses.">
 <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/layout.css">
 <script src="js/theme.js"></script>
@@ -74,7 +77,16 @@
 
 <footer class="site-footer">
   <div class="container">
-    <p>Micro-Expense Visualizer. Daily costs are turned into monthly ones using a 30.44-day month. The 7% growth figures are estimates for learning, not financial advice.</p>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 25V9l11 11L27 9v16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"/></svg>MEV</div>
+        <p>Micro-Expense Visualizer helps students see what small recurring spending really costs.</p>
+      </div>
+      <div class="footer-col"><h3>Product</h3><ul><li><a href="home.html">Dashboard</a></li><li><a href="add-expense.html">Add expense</a></li><li><a href="analytics.html">Ledger</a></li></ul></div>
+      <div class="footer-col"><h3>Company</h3><ul><li><a href="about.html">About</a></li><li><a href="help.html">Help</a></li><li><a href="about.html#terms">Terms of service</a></li></ul></div>
+      <div class="footer-col"><h3>Get started</h3><ul><li><a href="signup.html">Sign up</a></li><li><a href="register.html">Register with college ID</a></li><li><a href="signin.html">Sign in</a></li></ul></div>
+    </div>
+    <p class="footer-note">Daily costs are converted to monthly using a 30.44-day month. The 7% growth figures are estimates, not financial advice.</p>
   </div>
 </footer>
 

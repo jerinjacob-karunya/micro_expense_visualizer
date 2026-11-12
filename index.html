@@ -6,6 +6,9 @@
 <title>MEV - Micro-Expense Visualizer</title>
 <meta name="description" content="Track the coffees, subscriptions and daily charges that don't feel like much, and see what they add up to over a year and over ten.">
 <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/layout.css">
 <script src="js/theme.js"></script>
@@ -41,11 +44,12 @@
   <section class="hero">
     <div class="container hero-layout">
       <div class="hero-copy">
+        <p class="eyebrow">Spending awareness for colleges</p>
         <h1>Small spending.<br>A bigger picture.</h1>
-        <p>The little things deserve a closer look. Track everyday expenses and see what they add up to today, and years from now.</p>
+        <p>MEV turns daily coffees and forgotten subscriptions into one clear number: per month, per year and over ten years. Free for students. Licensed by the college.</p>
         <div class="hero-actions">
-          <a id="ctaStart" class="btn" href="signup.html">Get started</a>
-          <a class="btn btn-secondary" href="#features">See how it works</a>
+          <a id="ctaStart" class="btn" href="signup.html">Try the live demo</a>
+          <a class="btn btn-secondary" href="#institutions">For institutions</a>
         </div>
         <div class="hero-figures">
           <div class="hero-figure"><span class="num">$5.75</span><span class="cap">a daily coffee</span></div>
@@ -63,45 +67,55 @@
 
   <section class="section" id="features">
     <div class="container">
-      <h2 class="statement">A coffee a day sounds like nothing. It isn't.</h2>
+      <h2 class="statement">Students rarely notice what small charges add up to.</h2>
       <div class="columns">
-        <div>
-          <h3>Add the little stuff</h3>
-          <p>Coffee, Netflix, the gym you keep paying for. Put each one in once and pick daily or monthly. Presets save you typing the common ones.</p>
-        </div>
-        <div>
-          <h3>Everything on one scale</h3>
-          <p>A $12 ride every day and a $99 plan every month are hard to compare. Here they both turn into a monthly number.</p>
-        </div>
-        <div>
-          <h3>Know when it's too much</h3>
-          <p>Set a monthly limit on your profile. The bar on your dashboard goes green, then amber, then red as you get close.</p>
-        </div>
+        <div><h3>Log in seconds</h3><p>Coffee, streaming, the gym membership. Enter each once, choose daily or monthly, or tap a preset.</p></div>
+        <div><h3>One comparable number</h3><p>A $12 ride every day and a $99 plan every month both become a monthly figure, so they can be compared.</p></div>
+        <div><h3>A limit that warns early</h3><p>Students set a monthly limit. The dashboard bar turns green, amber, then red as they approach it.</p></div>
       </div>
       <div class="also">
-        <h3>Also in the box</h3>
-        <p>A calculator for quick sums, a chat helper that works without internet, and a dark mode that remembers your choice.</p>
+        <h3>Included</h3>
+        <p>A quick calculator, a chat helper that works offline, light and dark themes, and a layout that works from phone to desktop.</p>
       </div>
     </div>
   </section>
 
-  <section class="section section-alt" id="how">
+  <section class="section section-alt" id="institutions">
     <div class="container">
-      <h2>Three steps</h2>
+      <p class="eyebrow">For institutions</p>
+      <h2 class="statement">One licence for the college. Nothing to pay for students.</h2>
       <div class="columns">
-        <div><h3>1. Make an account</h3><p>Use quick sign up, or register with your college ID if you want it on your profile.</p></div>
-        <div><h3>2. Add what you pay for</h3><p>Enter each repeating charge once. It takes about ten seconds each.</p></div>
-        <div><h3>3. Read your dashboard</h3><p>See the monthly drain, the yearly total and what the money could have grown to.</p></div>
+        <div><h3>Free for every student</h3><p>Students never pay. The college holds a single yearly subscription.</p></div>
+        <div><h3>Linked to the college ID</h3><p>Students can register with their college ID, so accounts match your campus records.</p></div>
+        <div><h3>Privacy first</h3><p>In this version all data stays in the student's own browser. Nothing is uploaded.</p></div>
+      </div>
+      <h3 style="margin-top:48px">Proposed rollout</h3>
+      <ol class="rollout">
+        <li><strong>Pilot</strong><span>Run MEV with one department for a term.</span></li>
+        <li><strong>Review</strong><span>Collect student feedback and agree the next features.</span></li>
+        <li><strong>Campus licence</strong><span>Roll out to all students on a yearly subscription.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container">
+      <h2>Questions colleges ask</h2>
+      <div class="faq">
+        <details><summary>Where is student data stored?</summary><p>Only in the student's own browser (localStorage). Clearing browser data removes it.</p></details>
+        <details><summary>Does it need an internet connection?</summary><p>The pages load online, but the calculator and chat helper run in the browser without a server.</p></details>
+        <details><summary>Can students use it on phones?</summary><p>Yes. The layout is designed phone-first and grows to tablet and desktop.</p></details>
       </div>
     </div>
   </section>
 
   <section class="cta-band">
     <div class="container">
-      <h2>See your own numbers.</h2>
-      <p>It's free, and everything stays in your browser.</p>
+      <p class="eyebrow">Ready when you are</p>
+      <h2>See it with your own numbers.</h2>
+      <p>Create a free account and add a few expenses. It takes two minutes.</p>
       <div class="hero-actions">
-        <a class="btn" href="signup.html">Sign up</a>
+        <a class="btn" href="signup.html">Try the live demo</a>
         <a class="btn btn-secondary" href="register.html">Register with college ID</a>
       </div>
     </div>
@@ -110,7 +124,16 @@
 
 <footer class="site-footer">
   <div class="container">
-    <p>Micro-Expense Visualizer. Daily costs are turned into monthly ones using a 30.44-day month. The 7% growth figures are estimates for learning, not financial advice.</p>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 25V9l11 11L27 9v16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"/></svg>MEV</div>
+        <p>Micro-Expense Visualizer helps students see what small recurring spending really costs.</p>
+      </div>
+      <div class="footer-col"><h3>Product</h3><ul><li><a href="home.html">Dashboard</a></li><li><a href="add-expense.html">Add expense</a></li><li><a href="analytics.html">Ledger</a></li></ul></div>
+      <div class="footer-col"><h3>Company</h3><ul><li><a href="about.html">About</a></li><li><a href="help.html">Help</a></li><li><a href="about.html#terms">Terms of service</a></li></ul></div>
+      <div class="footer-col"><h3>Get started</h3><ul><li><a href="signup.html">Sign up</a></li><li><a href="register.html">Register with college ID</a></li><li><a href="signin.html">Sign in</a></li></ul></div>
+    </div>
+    <p class="footer-note">Daily costs are converted to monthly using a 30.44-day month. The 7% growth figures are estimates, not financial advice.</p>
   </div>
 </footer>
 
