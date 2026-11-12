@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Help - Micro-Expense Visualizer</title>
+<meta name="description" content="Answers to common questions about adding expenses, the dashboard, the budget colours and where your data is kept.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/layout.css">
+<script src="js/theme.js"></script>
+</head>
+<body data-page="help">
+
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="header-inner container">
+    <a class="brand" href="index.html" aria-label="MEV home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 25V9l11 11L27 9v16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"/></svg>
+      <span>MEV</span>
+    </a>
+    <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+      <ul id="navList">
+        <li><a href="index.html" data-nav="landing">Home</a></li>
+        <li><a href="home.html" data-nav="home">Dashboard</a></li>
+        <li><a href="add-expense.html" data-nav="add-expense">Add</a></li>
+        <li><a href="analytics.html" data-nav="analytics">Ledger</a></li>
+        <li><a href="help.html" data-nav="help">Help</a></li>
+        <li><a href="about.html" data-nav="about">About</a></li>
+      </ul>
+    </nav>
+    <button id="themeToggle" class="icon-btn" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z" fill="currentColor"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <button id="menuBtn" class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">Menu</button>
+  </div>
+</header>
+
+<main id="main">
+  <div class="container">
+    <div class="page-head"><h1>Help</h1><p>Quick answers. If yours isn't here, tap the chat button in the corner and ask.</p></div>
+    <div class="faq">
+      <details>
+        <summary>How do I add an expense?</summary>
+        <p>Open <a href="add-expense.html">Add</a>, pick a category, give it a name, type the cost and choose daily or monthly. Or tap a preset on the same page and it's added straight away.</p>
+      </details>
+      <details>
+        <summary>Why are daily costs multiplied by 30.44?</summary>
+        <p>That's the average number of days in a month. It lets a $5 daily coffee and a $15 monthly subscription sit on one monthly scale, so the totals are fair.</p>
+      </details>
+      <details>
+        <summary>What do the budget colours mean?</summary>
+        <p>On the dashboard, green means you've used under half of your monthly budget, amber means 50 to 89 percent, and red means 90 percent or more. Set the budget on your <a href="profile.html">profile</a>.</p>
+      </details>
+      <details>
+        <summary>What is the 10-year number?</summary>
+        <p>It's what your monthly total could grow to if you invested it each month at 7% a year instead of spending it. It's an estimate to make a point, not a promise.</p>
+      </details>
+      <details>
+        <summary>Where is my data kept?</summary>
+        <p>Only in this browser, using localStorage. Nothing is sent anywhere. If you clear your browser data, or open the site on another device, your account won't be there.</p>
+      </details>
+      <details>
+        <summary>Where is the calculator?</summary>
+        <p>It's the round button just left of the chat button, bottom-right of every page. Tap it, use the keys or your keyboard, and tap it again to close.</p>
+      </details>
+      <details>
+        <summary>What can the chat helper answer?</summary>
+        <p>How to add and edit expenses, what the dashboard numbers mean, the budget colours, accounts, dark mode and the calculator. It matches keywords, so short questions work best. Try "how much do I spend?" once you're signed in.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Micro-Expense Visualizer. Daily costs are turned into monthly ones using a 30.44-day month. The 7% growth figures are estimates for learning, not financial advice.</p>
+  </div>
+</footer>
+
+<script src="js/storage.js" defer></script>
+<script src="js/utils.js" defer></script>
+<script src="js/auth.js" defer></script>
+<script src="js/app.js" defer></script>
+<script src="js/calculator.js" defer></script>
+<script src="js/chatbot.js" defer></script>
+</body>
+</html>

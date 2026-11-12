@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard - Micro-Expense Visualizer</title>
+<meta name="description" content="See your monthly drain, annual cost and 10-year invested potential, plus a live budget indicator.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/layout.css">
+<script src="js/theme.js"></script>
+</head>
+<body data-page="home">
+
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="header-inner container">
+    <a class="brand" href="index.html" aria-label="MEV home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 25V9l11 11L27 9v16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"/></svg>
+      <span>MEV</span>
+    </a>
+    <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+      <ul id="navList">
+        <li><a href="index.html" data-nav="landing">Home</a></li>
+        <li><a href="home.html" data-nav="home">Dashboard</a></li>
+        <li><a href="add-expense.html" data-nav="add-expense">Add</a></li>
+        <li><a href="analytics.html" data-nav="analytics">Ledger</a></li>
+        <li><a href="help.html" data-nav="help">Help</a></li>
+        <li><a href="about.html" data-nav="about">About</a></li>
+      </ul>
+    </nav>
+    <button id="themeToggle" class="icon-btn" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z" fill="currentColor"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <button id="menuBtn" class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">Menu</button>
+  </div>
+</header>
+
+<main id="main">
+  <div class="container">
+    <div class="dashboard-layout">
+
+      <aside class="sidebar" aria-label="Dashboard menu">
+        <div class="card">
+          <ul class="side-nav">
+            <li><a href="home.html" class="active" aria-current="page">Overview</a></li>
+            <li><a href="add-expense.html">Add expense</a></li>
+            <li><a href="analytics.html">Ledger</a></li>
+            <li><a href="help.html">Help</a></li>
+            <li><a href="profile.html">Profile and budget</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <section class="dash-main" aria-label="Overview">
+        <div>
+          <h1 id="greeting">Overview</h1>
+          <p class="muted" id="metricCount">&nbsp;</p>
+        </div>
+
+        <div class="card empty-state" id="dashboardEmpty" hidden>
+          <h2>No expenses logged yet</h2>
+          <p class="muted" style="margin-left:auto;margin-right:auto">Add a subscription, a coffee habit or a preset to see your numbers.</p>
+          <a class="btn" href="add-expense.html">Add your first expense</a>
+        </div>
+
+        <div class="metric-grid">
+          <div class="metric-card" data-tone="drain">
+            <div class="metric-label">Monthly drain</div>
+            <div class="metric-value" id="metricMonthly">$0.00</div>
+            <p class="metric-sub">Recurring spend per month</p>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Annual cost</div>
+            <div class="metric-value" id="metricAnnual">$0.00</div>
+            <p class="metric-sub">A year of small charges</p>
+          </div>
+          <div class="metric-card" data-tone="growth">
+            <div class="metric-label">10-year invested potential</div>
+            <div class="metric-value" id="metricGrowth">$0.00</div>
+            <p class="metric-sub">If invested at 7% a year instead</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 class="card-title">The next 10 years</h2>
+          <div class="chart" id="spendChart"></div>
+        </div>
+
+        <div class="card">
+          <h2 class="card-title">Spending by category</h2>
+          <div id="categoryBreakdown"></div>
+        </div>
+      </section>
+
+      <aside class="dash-side" aria-label="Budget and snapshot">
+        <div class="card" id="budgetWidget"></div>
+        <div class="card">
+          <h2 class="card-title">Snapshot</h2>
+          <div id="snapshot"></div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Micro-Expense Visualizer. Daily costs are turned into monthly ones using a 30.44-day month. The 7% growth figures are estimates for learning, not financial advice.</p>
+  </div>
+</footer>
+
+<script src="js/storage.js" defer></script>
+<script src="js/utils.js" defer></script>
+<script src="js/chart.js" defer></script>
+<script src="js/auth.js" defer></script>
+<script src="js/app.js" defer></script>
+<script src="js/calculator.js" defer></script>
+<script src="js/chatbot.js" defer></script>
+</body>
+</html>
