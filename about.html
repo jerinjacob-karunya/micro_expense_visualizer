@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - Micro-Expense Visualizer</title>
+<meta name="description" content="About the Micro-Expense Visualizer project, what it's made with, and its terms of service.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/layout.css">
+<script src="js/theme.js"></script>
+</head>
+<body data-page="about">
+
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="header-inner container">
+    <a class="brand" href="index.html" aria-label="MEV home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 25V9l11 11L27 9v16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"/></svg>
+      <span>MEV</span>
+    </a>
+    <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+      <ul id="navList">
+        <li><a href="index.html" data-nav="landing">Home</a></li>
+        <li><a href="home.html" data-nav="home">Dashboard</a></li>
+        <li><a href="add-expense.html" data-nav="add-expense">Add</a></li>
+        <li><a href="analytics.html" data-nav="analytics">Ledger</a></li>
+        <li><a href="help.html" data-nav="help">Help</a></li>
+        <li><a href="about.html" data-nav="about">About</a></li>
+      </ul>
+    </nav>
+    <button id="themeToggle" class="icon-btn" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z" fill="currentColor"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <button id="menuBtn" class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">Menu</button>
+  </div>
+</header>
+
+<main id="main">
+  <div class="container">
+    <div class="page-head"><h1>About MEV</h1><p>We built Micro-Expense Visualizer for our Web Technology (25CS208) micro-project. The idea is simple: small charges feel harmless, so show what they add up to.</p></div>
+
+    <section style="margin-bottom:48px">
+      <h2>What it's made with</h2>
+      <p>Just HTML5, CSS3 and JavaScript. No framework and no backend. The layout starts from the phone and grows up to desktop, using Flexbox on small screens and CSS Grid on large ones. Forms are checked with regular expressions, your data lives in <code>localStorage</code>, and the chat helper and calculator are plain JavaScript that run offline.</p>
+    </section>
+
+    <section id="terms">
+      <h2>Terms of Service</h2>
+      <p>This is a student demo, so please keep these in mind:</p>
+      <ul style="padding-left:20px;max-width:38rem;color:var(--text-soft)">
+        <li>Your account and expenses are stored only in this browser. Clearing your browser data deletes them.</li>
+        <li>Passwords are only lightly scrambled here. Don't reuse a real password.</li>
+        <li>The 7% growth figures are estimates for learning, not financial advice.</li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Micro-Expense Visualizer. Daily costs are turned into monthly ones using a 30.44-day month. The 7% growth figures are estimates for learning, not financial advice.</p>
+  </div>
+</footer>
+
+<script src="js/storage.js" defer></script>
+<script src="js/utils.js" defer></script>
+<script src="js/auth.js" defer></script>
+<script src="js/app.js" defer></script>
+<script src="js/calculator.js" defer></script>
+<script src="js/chatbot.js" defer></script>
+</body>
+</html>

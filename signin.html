@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign in - Micro-Expense Visualizer</title>
+<meta name="description" content="Sign in to your Micro-Expense Visualizer account.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/layout.css">
+<script src="js/theme.js"></script>
+</head>
+<body data-page="signin">
+
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="header-inner container">
+    <a class="brand" href="index.html" aria-label="MEV home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 25V9l11 11L27 9v16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"/></svg>
+      <span>MEV</span>
+    </a>
+    <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+      <ul id="navList">
+        <li><a href="index.html" data-nav="landing">Home</a></li>
+        <li><a href="home.html" data-nav="home">Dashboard</a></li>
+        <li><a href="add-expense.html" data-nav="add-expense">Add</a></li>
+        <li><a href="analytics.html" data-nav="analytics">Ledger</a></li>
+        <li><a href="help.html" data-nav="help">Help</a></li>
+        <li><a href="about.html" data-nav="about">About</a></li>
+      </ul>
+    </nav>
+    <button id="themeToggle" class="icon-btn" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z" fill="currentColor"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <button id="menuBtn" class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">Menu</button>
+  </div>
+</header>
+
+<main id="main">
+  <div class="container">
+    <div class="page-head"><h1>Sign in</h1><p>Welcome back. Enter your email and password.</p></div>
+    <form id="signinForm" class="card auth-card" novalidate>
+      <div class="form-msg" id="formMsg" role="alert"></div>
+      <div class="field">
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" autocomplete="email" data-validate="email" required>
+        <span class="error-msg"></span>
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <div class="password-wrap">
+          <input type="password" id="password" name="password" autocomplete="current-password" required>
+          <button type="button" class="eye-btn" data-toggle-password="password" aria-label="Show password" aria-pressed="false"><svg class="icon-eye" viewBox="0 0 24 24" aria-hidden="true"><path d="M1.5 12S5.5 5 12 5s10.5 7 10.5 7-4 7-10.5 7S1.5 12 1.5 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></svg><svg class="icon-eye-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M1.5 12S5.5 5 12 5s10.5 7 10.5 7-4 7-10.5 7S1.5 12 1.5 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 3l18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-block">Sign in</button>
+      <p class="muted" style="margin-top:16px">New here? <a href="signup.html">Sign up</a> or <a href="register.html">register with your college details</a>.</p>
+    </form>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Micro-Expense Visualizer. Daily costs are turned into monthly ones using a 30.44-day month. The 7% growth figures are estimates for learning, not financial advice.</p>
+  </div>
+</footer>
+
+<script src="js/storage.js" defer></script>
+<script src="js/utils.js" defer></script>
+<script src="js/validation.js" defer></script>
+<script src="js/auth.js" defer></script>
+<script src="js/app.js" defer></script>
+<script src="js/calculator.js" defer></script>
+<script src="js/chatbot.js" defer></script>
+</body>
+</html>

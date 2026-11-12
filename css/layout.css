@@ -1,0 +1,173 @@
+/* =====================================================================
+   layout.css - page structure. MOBILE-FIRST: the rules outside a media
+   query are for phones (one column). Wider screens add rules with
+   @media (min-width: 768px).
+   ===================================================================== */
+
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+main { display: block; padding: 32px 0 80px; }
+.page-head { margin-bottom: 28px; }
+.section { padding: 64px 0; }
+.section-alt { background: var(--bg-alt); }
+
+/* ---------- Header (a "Menu" drawer on phones) ---------- */
+.site-header {
+  --hdr-bg: var(--bg);
+  --hdr-text: var(--text);
+  position: sticky; top: 0; z-index: 50;
+  background: var(--hdr-bg); color: var(--hdr-text);
+  border-bottom: 1px solid var(--border);
+}
+.header-inner { display: flex; align-items: center; gap: 6px; min-height: 60px; position: relative; }
+.brand {
+  display: flex; align-items: center; gap: 10px; margin-right: auto;
+  color: inherit; text-decoration: none; font-weight: 600; letter-spacing: 0.3em; font-size: 0.95rem;
+}
+.brand svg { width: 28px; height: 28px; }
+
+.icon-btn, .menu-btn {
+  display: flex; align-items: center; justify-content: center;
+  min-width: 44px; height: 44px; padding: 0 12px; border: 0; border-radius: 4px;
+  background: transparent; color: inherit; font: inherit; font-size: 0.9rem; font-weight: 500; cursor: pointer;
+}
+.icon-btn:hover, .menu-btn:hover { background: rgba(128, 128, 128, 0.18); }
+.icon-btn svg { width: 22px; height: 22px; }
+.icon-btn .icon-sun { display: none; }
+[data-theme="dark"] .icon-btn .icon-sun { display: block; }
+[data-theme="dark"] .icon-btn .icon-moon { display: none; }
+.site-header a:focus-visible, .site-header button:focus-visible { outline-color: currentColor; }
+
+/* The drawer: hidden until the Menu button adds the .open class */
+.main-nav {
+  display: none; position: absolute; top: 100%; left: 0; right: 0;
+  padding: 8px 20px 20px; background: var(--drawer-bg, var(--bg));
+  border-bottom: 1px solid var(--border);
+}
+.main-nav.open { display: block; }
+.main-nav ul { list-style: none; }
+.main-nav a, .nav-btn {
+  display: block; width: 100%; padding: 14px 4px; text-align: left;
+  color: inherit; text-decoration: none; font: inherit; font-size: 1.1rem; font-weight: 500;
+  background: none; border: 0; border-bottom: 1px solid rgba(128, 128, 128, 0.25); cursor: pointer;
+}
+.main-nav a.active { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
+.nav-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ---------- Landing page ---------- */
+body[data-page="landing"] main { padding: 0; }
+body[data-page="landing"] .site-header {
+  --hdr-bg: transparent; --hdr-text: #fff; --drawer-bg: #14161a;
+  position: absolute; left: 0; right: 0; border-bottom: 0;
+}
+body[data-page="landing"] .main-nav { border-bottom: 0; }
+
+.hero {
+  min-height: 100vh; min-height: 100svh;
+  display: flex; align-items: center; padding: 110px 0 56px; color: #fff;
+  background:
+    radial-gradient(ellipse at 78% 48%, rgba(130, 137, 146, 0.18), transparent 34%),
+    radial-gradient(ellipse at 8% 100%, rgba(66, 72, 81, 0.18), transparent 38%),
+    linear-gradient(115deg, #111214 0%, #191a1c 58%, #101113 100%);
+}
+.hero-layout { display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center; }
+.hero h1 { margin-bottom: 20px; color: #fff; font-size: clamp(3rem, 12vw, 5.6rem); line-height: 0.98; letter-spacing: -0.06em; }
+.hero-copy p { max-width: 26rem; color: rgba(255, 255, 255, 0.78); font-size: 1.05rem; line-height: 1.7; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 44px; }
+.hero .btn { min-width: 160px; }
+.hero .btn-secondary { background: rgba(244, 244, 244, 0.85); color: #171a20; border-color: transparent; }
+.hero .btn-secondary:hover { background: #fff; color: #171a20; }
+.hero a:focus-visible { outline-color: #fff; }
+.hero-figures {
+  display: grid; grid-template-columns: repeat(3, 1fr); max-width: 560px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+.hero-figure { padding: 16px 12px 0 0; }
+.hero-figure + .hero-figure { padding-left: 14px; }
+.hero-figure .num { display: block; font-size: 1.3rem; font-weight: 500; letter-spacing: -0.03em; }
+.hero-figure .cap { font-size: 0.8rem; color: rgba(255, 255, 255, 0.72); }
+
+/* The chart card in the hero is dark in both themes */
+.hero-chart {
+  --chart-bar: rgba(245, 245, 245, 0.55);
+  --chart-line: #8aa6f0;
+  --chart-grid: rgba(255, 255, 255, 0.1);
+  --chart-text: rgba(255, 255, 255, 0.7);
+  padding: 24px 22px 20px; border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 4px;
+  background: linear-gradient(145deg, rgba(44, 46, 49, 0.94), rgba(25, 26, 28, 0.95));
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.35);
+}
+.hero-chart h2 { margin: 0 0 4px; color: #fff; font-size: 1.35rem; }
+.hero-chart p { margin: 0 0 18px; color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; }
+.hero-chart .chart-legend strong { color: #fff; }
+
+.statement { max-width: 22ch; margin: 0 0 48px; font-size: clamp(2rem, 6vw, 3.4rem); line-height: 1.05; letter-spacing: -0.05em; }
+.columns { display: grid; grid-template-columns: 1fr; gap: 32px; }
+.columns > div { padding-top: 18px; border-top: 1px solid var(--border-strong); }
+.columns h3 { margin-bottom: 8px; font-size: 1.25rem; }
+.columns p { margin: 0; font-size: 0.95rem; }
+.also { margin-top: 40px; max-width: 38rem; }
+.also p { margin-bottom: 6px; }
+
+.cta-band { padding: 80px 0; background: #171a20; color: #fff; text-align: center; }
+.cta-band h2 { color: #fff; font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -0.05em; }
+.cta-band p { margin: 0 auto 28px; color: rgba(255, 255, 255, 0.72); }
+.cta-band .hero-actions { justify-content: center; margin: 0; }
+.cta-band .btn-secondary { background: rgba(244, 244, 244, 0.85); color: #171a20; border-color: transparent; }
+.cta-band .btn-secondary:hover { background: #fff; color: #171a20; }
+.cta-band a:focus-visible { outline-color: #fff; }
+
+/* ---------- Forms pages ---------- */
+.auth-card { max-width: 440px; border-top: 0; padding-top: 0; }
+.two-col { display: grid; grid-template-columns: 1fr; gap: 32px; }
+.two-col > .card { border-top: 0; padding-top: 0; }
+
+/* ---------- Dashboard (home.html) ----------
+   Phone: one column stacked with Flexbox.
+   Desktop (768px and up): 3-column CSS Grid, see the media query below. */
+.dashboard-layout { display: flex; flex-direction: column; gap: 28px; }
+.sidebar { display: none; }          /* phones use the Menu drawer instead */
+.dash-main, .dash-side { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.side-nav { list-style: none; }
+.side-nav a { display: block; padding: 10px 0 10px 12px; border-left: 2px solid transparent; color: var(--text-soft); text-decoration: none; }
+.side-nav a:hover { color: var(--text); }
+.side-nav a.active { border-left-color: var(--text); color: var(--text); font-weight: 500; }
+
+/* ---------- Footer ---------- */
+.site-footer { padding: 28px 0; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--text-muted); }
+.site-footer p { max-width: none; margin: 0; color: inherit; }
+body[data-page="landing"] .site-footer { background: #171a20; border-top: 0; color: rgba(255, 255, 255, 0.6); }
+
+/* ---------- Tablet and desktop ---------- */
+@media (min-width: 768px) {
+  .container { padding: 0 32px; }
+  main { padding: 56px 0 100px; }
+  h1 { font-size: 2.8rem; }
+
+  /* Header: the drawer becomes a row of links and the Menu button goes away */
+  .menu-btn { display: none; }
+  .main-nav { display: block; position: static; padding: 0; background: none; border: 0; }
+  .main-nav ul { display: flex; align-items: center; }
+  .main-nav a, .nav-btn { width: auto; padding: 8px 10px; font-size: 0.85rem; border-bottom: 0; }
+  .main-nav a.active { text-underline-offset: 8px; }
+  .nav-name { max-width: 120px; }
+
+  .metric-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+  .section { padding: 96px 0; }
+  .columns { grid-template-columns: repeat(3, 1fr); gap: 40px; }
+  .two-col { grid-template-columns: 1fr 1fr; gap: 56px; }
+  .filter-bar { flex-direction: row; justify-content: space-between; align-items: center; }
+  .search-box { flex: 0 1 280px; }
+
+  /* Dashboard: 3-column CSS Grid */
+  .dashboard-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr 300px;
+    gap: 24px;
+    align-items: start;
+  }
+  .sidebar { display: block; position: sticky; top: 84px; }
+}
+
+@media (min-width: 900px) {
+  .hero-layout { grid-template-columns: minmax(0, 1.1fr) minmax(340px, 0.9fr); gap: 80px; }
+}

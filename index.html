@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MEV - Micro-Expense Visualizer</title>
+<meta name="description" content="Track the coffees, subscriptions and daily charges that don't feel like much, and see what they add up to over a year and over ten.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/layout.css">
+<script src="js/theme.js"></script>
+</head>
+<body data-page="landing">
+
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="header-inner container">
+    <a class="brand" href="index.html" aria-label="MEV home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 25V9l11 11L27 9v16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"/></svg>
+      <span>MEV</span>
+    </a>
+    <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+      <ul id="navList">
+        <li><a href="index.html" data-nav="landing">Home</a></li>
+        <li><a href="home.html" data-nav="home">Dashboard</a></li>
+        <li><a href="add-expense.html" data-nav="add-expense">Add</a></li>
+        <li><a href="analytics.html" data-nav="analytics">Ledger</a></li>
+        <li><a href="help.html" data-nav="help">Help</a></li>
+        <li><a href="about.html" data-nav="about">About</a></li>
+      </ul>
+    </nav>
+    <button id="themeToggle" class="icon-btn" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z" fill="currentColor"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <button id="menuBtn" class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">Menu</button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="container hero-layout">
+      <div class="hero-copy">
+        <h1>Small spending.<br>A bigger picture.</h1>
+        <p>The little things deserve a closer look. Track everyday expenses and see what they add up to today, and years from now.</p>
+        <div class="hero-actions">
+          <a id="ctaStart" class="btn" href="signup.html">Get started</a>
+          <a class="btn btn-secondary" href="#features">See how it works</a>
+        </div>
+        <div class="hero-figures">
+          <div class="hero-figure"><span class="num">$5.75</span><span class="cap">a daily coffee</span></div>
+          <div class="hero-figure"><span class="num">$2,100</span><span class="cap">a year, unnoticed</span></div>
+          <div class="hero-figure"><span class="num">$30,295</span><span class="cap">over 10 years at 7%</span></div>
+        </div>
+      </div>
+      <div class="hero-chart">
+        <h2>One small habit.</h2>
+        <p>A $5.75 coffee, every day, for ten years.</p>
+        <div class="chart chart-intro" id="heroChart"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <div class="container">
+      <h2 class="statement">A coffee a day sounds like nothing. It isn't.</h2>
+      <div class="columns">
+        <div>
+          <h3>Add the little stuff</h3>
+          <p>Coffee, Netflix, the gym you keep paying for. Put each one in once and pick daily or monthly. Presets save you typing the common ones.</p>
+        </div>
+        <div>
+          <h3>Everything on one scale</h3>
+          <p>A $12 ride every day and a $99 plan every month are hard to compare. Here they both turn into a monthly number.</p>
+        </div>
+        <div>
+          <h3>Know when it's too much</h3>
+          <p>Set a monthly limit on your profile. The bar on your dashboard goes green, then amber, then red as you get close.</p>
+        </div>
+      </div>
+      <div class="also">
+        <h3>Also in the box</h3>
+        <p>A calculator for quick sums, a chat helper that works without internet, and a dark mode that remembers your choice.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="how">
+    <div class="container">
+      <h2>Three steps</h2>
+      <div class="columns">
+        <div><h3>1. Make an account</h3><p>Use quick sign up, or register with your college ID if you want it on your profile.</p></div>
+        <div><h3>2. Add what you pay for</h3><p>Enter each repeating charge once. It takes about ten seconds each.</p></div>
+        <div><h3>3. Read your dashboard</h3><p>See the monthly drain, the yearly total and what the money could have grown to.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>See your own numbers.</h2>
+      <p>It's free, and everything stays in your browser.</p>
+      <div class="hero-actions">
+        <a class="btn" href="signup.html">Sign up</a>
+        <a class="btn btn-secondary" href="register.html">Register with college ID</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Micro-Expense Visualizer. Daily costs are turned into monthly ones using a 30.44-day month. The 7% growth figures are estimates for learning, not financial advice.</p>
+  </div>
+</footer>
+
+<script src="js/storage.js" defer></script>
+<script src="js/utils.js" defer></script>
+<script src="js/chart.js" defer></script>
+<script src="js/auth.js" defer></script>
+<script src="js/app.js" defer></script>
+<script src="js/calculator.js" defer></script>
+<script src="js/chatbot.js" defer></script>
+</body>
+</html>
